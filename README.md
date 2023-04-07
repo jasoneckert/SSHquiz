@@ -1,2 +1,2 @@
-# Kahoot-like quiz system made with BASH scripts and accessed via SSH
+# Kahoot-like quizzer made with BASH scripts and accessed via SSH
 
