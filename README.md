@@ -9,9 +9,9 @@ During an existing video presentation (e.g., BigBlueButton, MS Teams, Zoom), the
 
 Next, the presenter will share their `quiz.sh` terminal window with the audience to display questions:
 
-![Presenter](https://github.com/jasoneckert/SSHquiz/blob/main/docs/presenter.png?raw=true)
+![Presenter](https://github.com/jasoneckert/SSHquiz/blob/main/docs/presenterscreen.png?raw=true)
 
 Participants will SSH into the Linux server using the temporary user credentials provided by the presenter, choose a handle, and answer quiz questions:
 
-![Quiz](https://github.com/jasoneckert/SSHquiz/blob/main/docs/participant.png?raw=true)
+![Quiz](https://github.com/jasoneckert/SSHquiz/blob/main/docs/participantscreen.png?raw=true)
 
