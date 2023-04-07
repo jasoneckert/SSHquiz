@@ -16,17 +16,17 @@ for QUESTION in $(seq 1 20); do
   RESULT=""
   FILENAME=""
   while true; do
-  SECONDS=0
-  echo -e "Please enter your choice for QUESTION $QUESTION (enter 1, 2, 3, or 4 only!)-->\c"
-  read CHOICE
-  export RESULT=$HANDLE-$SECONDS-$CHOICE
-  export FILENAME="/quiz/$QUESTION/$RESULT"
-  if touch $FILENAME; then
-    break
-  else
-    echo -e "You must wait for the question to be presented before you answer!"
-    sleep 2
-  fi 2>/dev/null
+    SECONDS=0
+    echo -e "Please enter your choice for QUESTION $QUESTION (enter 1, 2, 3, or 4 only!)-->\c"
+    read CHOICE
+    export RESULT=$HANDLE-$SECONDS-$CHOICE
+    export FILENAME="/quiz/$QUESTION/$RESULT"
+    if touch $FILENAME; then
+      break
+    else
+      echo -e "You must wait for the question to be presented before you answer!"
+      sleep 2
+    fi 2>/dev/null
   done
 done
 
