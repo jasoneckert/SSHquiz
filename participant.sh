@@ -1,9 +1,9 @@
 #!/bin/bash
 #Prompt the user for handle, remove any special characters, convert to lowercase, append PID to guarantee uniqueness
-echo -e "Welcome Quiz Participant!\n\nEnter your handle (up to 7 letters, no spaces or special characters)-->\c "
+echo -e "Welcome Quiz Participant!\n\nEnter your handle (up to 7 letters, no spaces or special characters)--> \c"
 read ANSWER
 export HANDLE=$(echo $ANSWER | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')$$
-echo -e "Thankyou $HANDLE, get ready to start the quiz!\n\nRemember that you must answer each question before you are able to answer the next one. Answers that are provided after the presenter has moved to the results will not be counted."
+echo -e "Thankyou $HANDLE, get ready to start the quiz!\n\nYou must answer each question before you can answer the next one.\nAnswers provided after the results are shown will not be counted.\nGood Luck!\n\n"
 sleep 4
 
 #This loops through the number of questions (20 in this example) and
@@ -17,7 +17,7 @@ for QUESTION in $(seq 1 20); do
   FILENAME=""
   while true; do
     SECONDS=0
-    echo -e "Please enter your choice for QUESTION $QUESTION (enter 1, 2, 3, or 4 only!)-->\c "
+    echo -e "Please enter your choice for QUESTION $QUESTION (enter 1, 2, 3, or 4 only!)--> \c"
     read CHOICE
     export RESULT=$HANDLE-$SECONDS-$CHOICE
     export FILENAME="/quiz/$QUESTION/$RESULT"
