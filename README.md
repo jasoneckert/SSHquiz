@@ -13,7 +13,7 @@ During an existing video presentation (e.g., BigBlueButton, MS Teams, Zoom), the
 - Creates a temporary user and password that can be shared with participants on the video presentation for SSH connectivity
 - Sets up the directories used to record participant results
 - Starts the quiz and displays questions (shown below)
-- Archives results, deletes all quiz files and directories, and revmoes the temporary user
+- Archives results, deletes all quiz files and directories, and removes the temporary user
 
 ![Presenter](https://github.com/jasoneckert/SSHquiz/blob/main/docs/presenterscreen.png?raw=true)
 
