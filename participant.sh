@@ -30,4 +30,5 @@ for QUESTION in $(seq 1 20); do
   done
 done
 
-echo -e "CONGRATULATIONS! You have successfully completed this quiz.\nYou have won a free copy of Fedora Linux that you can redeem using this personalized link: https://getfedora.org"
+echo -e "CONGRATULATIONS! You have successfully completed this quiz.\nYou have won a free copy of Fedora Linux that you can redeem using this personalized link: https://getfedora.org\n\nPress Enter to quit."
+read DUMMY
