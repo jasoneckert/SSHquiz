@@ -1,5 +1,9 @@
 # Kahoot-like quizzer made with BASH scripts and accessed via SSH
 
+To keep things simple, everyone connects using SSH to a single Linux server, everything is stored in a file (the UNIX way), and all functionality is provided by two BASH scripts.
+
+![Structure](https://github.com/jasoneckert/SSHquiz/blob/main/docs/structure.png?raw=true)
+
 ## Instructions:
 On any Linux server (container, VM, bare metal, IoT):
 - Copy `participant.sh` to the `/bin` directory
@@ -13,5 +17,5 @@ Next, the presenter will share their `quiz.sh` terminal window with the audience
 
 Participants will SSH into the Linux server using the temporary user credentials provided by the presenter, choose a handle, and answer quiz questions:
 
-![Quiz](https://github.com/jasoneckert/SSHquiz/blob/main/docs/participantscreen.png?raw=true)
+![Participants](https://github.com/jasoneckert/SSHquiz/blob/main/docs/participantscreen.png?raw=true)
 
