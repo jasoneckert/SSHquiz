@@ -2,7 +2,7 @@
 
 To keep things simple, everyone connects using SSH to a single Linux server, everything is stored in a file (the UNIX way), and all functionality is provided by two BASH scripts.
 
-![Structure](https://github.com/jasoneckert/SSHquiz/blob/main/docs/structure.png?raw=true)
+![Layout](https://github.com/jasoneckert/SSHquiz/blob/main/docs/layout.png?raw=true)
 
 ## Instructions:
 On any Linux server (container, VM, bare metal, IoT):
