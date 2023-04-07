@@ -13,5 +13,5 @@ Next, the presenter will share their `quiz.sh` terminal window with the audience
 
 Participants will SSH into the Linux server using the temporary user credentials provided by the presenter, choose a handle, and answer quiz questions:
 
-![Quiz](https://github.com/jasoneckert/SSHquiz/blob/main/docs/quiz.png?raw=true)
+![Quiz](https://github.com/jasoneckert/SSHquiz/blob/main/docs/participant.png?raw=true)
 
