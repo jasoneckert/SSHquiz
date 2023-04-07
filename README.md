@@ -8,12 +8,16 @@ To keep things simple, both the presenter and participants connect using SSH to 
 On any Linux server (container, VM, bare metal, IoT):
 - Copy `participant.sh` to the `/bin` directory
 - Copy `presenter.sh` to the `/root` directory
+- Copy `quiztemplate.json` to the `/root` directory
 
-During an existing video presentation (e.g., BigBlueButton, MS Teams, Zoom), the quiz presenter will connect to the Linux server using SSH, switch to `/root` and execute `presenter.sh` - this script:
+Prior to the presentation, modify the sample contents of `/root/quiztemplate.json` to add your questions.
+
+During an existing video presentation (e.g., BigBlueButton, MS Teams, Zoom), the presenter will connect to the Linux server using SSH, switch to `/root` and execute the `presenter.sh` script, which:
 - Creates a temporary user and password that can be shared with participants on the video presentation for SSH connectivity
 - Sets up the directories used to record participant results
-- Starts the quiz and displays questions (shown below)
-- Archives results, deletes all quiz files and directories, and removes the temporary user
+- Presents the questions in `/root/quiztemplate.json` to the participants (as shown below) until no more questions are left
+- Displays question statistics following each question, and leaderboard statistics every 5 questions
+- Archives results, deletes all quiz files and directories, and removes the temporary user at quiz completion
 
 ![Presenter](https://github.com/jasoneckert/SSHquiz/blob/main/docs/presenterscreen.png?raw=true)
 
