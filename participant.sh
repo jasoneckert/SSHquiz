@@ -3,7 +3,7 @@
 echo -e "Welcome Quiz Participant!\n\nEnter your handle (up to 7 letters, no spaces or special characters)-->\c "
 read ANSWER
 export HANDLE=$(echo $ANSWER | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')$$
-echo "Thankyou $HANDLE, get ready to start the quiz!\n\nRemember that you must answer each question before you are able to answer the next one. Answers that are provided after the presenter has moved to the results will not be counted."
+echo -e "Thankyou $HANDLE, get ready to start the quiz!\n\nRemember that you must answer each question before you are able to answer the next one. Answers that are provided after the presenter has moved to the results will not be counted."
 sleep 4
 
 #This loops through the number of questions (20 in this example) and
