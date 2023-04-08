@@ -19,7 +19,9 @@ During an existing video presentation (e.g., BigBlueButton, MS Teams, Zoom), the
 - Displays answer and question statistics following each question, as well as the top 3 scorers at the end (IN PROGRESS)
 - Archives results, deletes all quiz files and directories, and removes the temporary user at quiz completion (IN PROGRESS)
 
-![Presenter](https://github.com/jasoneckert/SSHquiz/blob/main/docs/presenterscreen.png?raw=true)
+![Presenter1](https://github.com/jasoneckert/SSHquiz/blob/main/docs/presenter1.png?raw=true)
+
+![Presenter2](https://github.com/jasoneckert/SSHquiz/blob/main/docs/presenter2.png?raw=true)
 
 After participants SSH into the Linux server using the temporary user credentials provided by the presenter, they choose their handle and answer quiz questions:
 
