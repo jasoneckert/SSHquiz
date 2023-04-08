@@ -84,3 +84,6 @@ for QUESTION in $(seq 1 20); do
 done
 
 #Tally results and top 3 scorers at end
+
+#Archive results, delete /quiz directory, and remove quiz user account
+
