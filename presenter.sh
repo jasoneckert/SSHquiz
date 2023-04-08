@@ -35,6 +35,10 @@ fi
 clear
 echo -e "What is the host name or IP address of your Linux server?--> \c"
 read SERVER
+echo -e "Adjust the size of your graphical terminal such that it is\nslightly wider than the line shown here and press Enter.
+echo -e "========================================================"
+read DUMMY
+clear
 echo -e "\nPRESENTER INSTRUCTIONS (READ CAREFULLY):\nWhen you press Enter, the SSH username and password\nthat participants should use will be displayed.\n\nAt this point, share your terminal window in your presentation\nand advise users to SSH into the server using these credentials.\n\nWhen you are satisfied that everyone is connected, press Enter to\nstart the quiz and display the first question.\n\nNarrate the question and answers as needed. When you feel enough time has\npassed for participants to answer, press Enter to view the results.\n\nAfter viewing the results, press Enter to continue to the next question.\n\nREADY TO START? PRESS ENTER TO DISPLAY THE SSH CREDENTIALS"
 read DUMMY
 
