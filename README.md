@@ -16,7 +16,7 @@ On any Linux server (container, VM, bare metal, IoT):
 
 Prior to the presentation, modify the sample contents of `/root/quiztemplate.json` to add your questions.
 
-During an existing video presentation (e.g., BigBlueButton, MS Teams, Zoom), the presenter will connect to the Linux server using SSH, switch to `/root` and execute the `presenter.sh` script, which:
+During an existing video presentation (e.g., BigBlueButton, MS Teams, Zoom), the presenter will connect to the Linux server using SSH, switch to root and execute the `presenter.sh` script, which:
 - Creates a temporary user and password that can be shared with participants on the video presentation for SSH connectivity
 - Sets up the directories used to record participant results
 - Presents the questions in `/root/quiztemplate.json` to the participants until no more questions are left
