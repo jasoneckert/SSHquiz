@@ -25,6 +25,7 @@ read DUMMY
 
 #Create /quiz directory, add quiz user, display credentials
 mkdir -m 1777 /quiz
+mkdir -m 1777 /quiz/participants
 useradd -m -s /bin/participant.sh quiz$$
 PW=$(shuf -n 1 /usr/share/dict/words)
 echo "quiz$$:$PW" | chpasswd
@@ -49,6 +50,8 @@ for QUESTION in $(seq 1 20); do
   echo -e "\n========================================================"
   read DUMMY
   clear
+  export ANSWER=$(cat quiztemplate.json | jq ".Question$QUESTION.Answer" | tr -d '"'')
+  find /quiz/$QUESTION -name "*-$ANSWER" | sed "s#/quiz/$QUESTION##" > /quiz/$QUESTIONresults
   echo -e "========================================================"
   echo -e "                         ANSWER"
   echo -e "========================================================"
@@ -68,11 +71,22 @@ for QUESTION in $(seq 1 20); do
   read DUMMY
 done
 
-#Tally results and top 3 scorers at end
+#Tally results and top 5 scorers at end
+cat /quiz/*results | sort > /quiz/totalresults
+for PARTICIPANT in $(ls /quiz/participants); do
+  echo -e "$PARTICIPANT: $(grep $PARTICIPANT /quiz/totalresults | wc -l) correct" >>/quiz/scores
+done
+echo -e "========================================================"
+echo -e "                     TOP 5 SCORES"
+echo -e "========================================================\n"
+sort -rk 2 /quiz/scores | head -5 | tee /quiz/top5scores
+echo -e "\n========================================================"
+read DUMMY
 
 #Archive results, delete /quiz directory, and remove quiz user account
 echo -e "Press Enter to archive and remove all results and the quiz$$ user account"
 read DUMMY
 tar -zcvf /root/quiz-$(date +%F).tar.gz /quiz
 rm -Rf /quiz
+killall -u quiz$$
 userdel -r quiz$$
