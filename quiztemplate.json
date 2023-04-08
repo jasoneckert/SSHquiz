@@ -1,0 +1,20 @@
+{
+  "Question1": {
+  "Description":  "What colour is the Fedora logo?",
+  "Choice1": "1. Brown",
+  "Choice2": "2. Red",
+  "Choice3": "3. Blue",
+  "Choice4": "4. Orange",
+  "Answer": "3",
+  "AnswerDescription": "3. The Fedora logo is blue."
+  },
+  "Question2": {
+  "Description": "What colour is the Ubuntu logo?",
+  "Choice1": "1. Brown",
+  "Choice2": "2. Red",
+  "Choice3": "3. Blue",
+  "Choice4": "4. Orange",
+  "Answer": "4",
+  "AnswerDescription": "4. The Ubuntu logo is orange."
+  }
+}

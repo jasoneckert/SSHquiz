@@ -5,13 +5,25 @@ if [ $UID -ne 0 ]; then
   exit 255
 fi
 
-#Check for required programs installed
+#Check for required programs
 if ! which chpasswd; then
   echo -e "You must install the chpasswd command."
   exit 255
 fi
 if ! which shuf; then
   echo -e "You must install the shuf command."
+  exit 255
+fi
+if ! which fold; then
+  echo -e "You must install the fold command."
+  exit 255
+fi
+if ! which tr; then
+  echo -e "You must install the tr command."
+  exit 255
+fi
+if ! which jq; then
+  echo -e "You must install the jq command."
   exit 255
 fi
 
@@ -31,9 +43,40 @@ clear
 echo -e "========================================================\n SSH server: $SERVER\n========================================================\n SSH username: quiz$$\n========================================================\n SSH password: $PW\n========================================================\n\n When everyone has connected, the presenter will press\n Enter to start the quiz and display the first question.\n\n========================================================"
 read DUMMY
 
-#Logic to display quiz question and create submission directory (put in function?)
-#Work in progress...
-clear
-mkdir -m 1777 /quiz/1
+#Display quiz question followed by answer and results
+#Modify "20" to reflect the actual number of quiz questions.
+for QUESTION in $(seq 1 20); do
+  mkdir -m 1777 /quiz/$QUESTION
+  clear
+  echo -e "========================================================"
+  echo -e "                       QUESTION #$QUESTION"
+  echo -e "========================================================"
+  cat quiztemplate.json | jq ".Question$QUESTION.Description" | fold -w 56 | tr -d '"'
+  echo -e "========================================================\n"
+  cat quiztemplate.json | jq ".Question$QUESTION.Choice1" | fold -w 56 | tr -d '"'
+  cat quiztemplate.json | jq ".Question$QUESTION.Choice2" | fold -w 56 | tr -d '"'
+  cat quiztemplate.json | jq ".Question$QUESTION.Choice3" | fold -w 56 | tr -d '"'
+  cat quiztemplate.json | jq ".Question$QUESTION.Choice4" | fold -w 56 | tr -d '"'
+  echo -e "\n========================================================"
+  read DUMMY
+  clear
+  echo -e "========================================================"
+  echo -e "                         ANSWER
+  echo -e "========================================================"
+  cat quiztemplate.json | jq ".Question$QUESTION.AnswerDescription" | fold -w 56 | tr -d '"'
+  echo -e "========================================================"
+  echo -e "                         RESULTS
+  echo -e "========================================================\n"
+  export RESULTS1=$(find /quiz/$QUESTION -name "*-1"|wc -l)
+  echo -e "Answer 1. $(perl -e "print '*' x $RESULTS1")"
+  export RESULTS2=$(find /quiz/$QUESTION -name "*-1"|wc -l)
+  echo -e "Answer 2. $(perl -e "print '*' x $RESULTS2")"
+  export RESULTS3=$(find /quiz/$QUESTION -name "*-1"|wc -l)
+  echo -e "Answer 3. $(perl -e "print '*' x $RESULTS3")"
+  export RESULTS4=$(find /quiz/$QUESTION -name "*-1"|wc -l)
+  echo -e "Answer 4. $(perl -e "print '*' x $RESULTS4")"
+  echo -e "\n========================================================"
+  read DUMMY
+done
 
-
+#Tally results and top 3 scorers at end
