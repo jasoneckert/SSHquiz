@@ -1,6 +1,6 @@
 # Kahoot-like quizzer made with BASH scripts and accessed via SSH
 
-To keep things simple, both the presenter and participants connect using SSH to a single Linux server. All quiz answers are stored in local files (the UNIX way), and all quiz functionality is provided by two BASH scripts: `presenter.sh` run by the presenter, and `participant.sh` (which is run instead of BASH upon SSH login).
+To keep things simple, both the presenter and participants connect using SSH to a single Linux server. Quiz questions and answers are recorded in `quiztemplate.json`, participant answers are stored in local files (the UNIX way), and all quiz functionality is provided by two BASH scripts: `presenter.sh` run by the presenter, and `participant.sh` (which is run instead of BASH upon SSH login).
 
 ![Layout](https://github.com/jasoneckert/SSHquiz/blob/main/docs/layout.png?raw=true)
 
