@@ -39,7 +39,7 @@ echo -e "Increase the size of your terminal font. Next, adjust\nyour graphical t
 echo -e "========================================================"
 read DUMMY
 clear
-echo -e "\nPRESENTER INSTRUCTIONS (READ CAREFULLY):\nWhen you press Enter, the SSH username and password\nthat participants should use will be displayed.\n\nAt this point, share your terminal window in your presentation\nand advise users to SSH into the server using these credentials.\n\nWhen you are satisfied that everyone is connected, press Enter to\nstart the quiz and display the first question.\n\nNarrate the question and answers as needed. When you feel enough time has\npassed for participants to answer, press Enter to view the results.\n\nAfter viewing the results, press Enter to continue to the next question.\n\nREADY TO START? PRESS ENTER TO DISPLAY THE SSH CREDENTIALS"
+echo -e "\nPRESENTER INSTRUCTIONS (READ CAREFULLY):\nWhen you press Enter, the SSH username and password\nthat participants should use will be displayed.\n\nAt this point, share your terminal window in your\npresentation and advise users to SSH into the server\nusing these credentials. When you are satisfied that\neveryone is connected, press Enter to start the quiz\nand display the first question.\n\nNarrate the question and answers as needed. When you\nfeel enough time has passed for participants to answer,\npress Enter to view the results.\n\nAfter viewing the results, press Enter to continue to\nthe next question.\n\nREADY TO START?\nPRESS ENTER TO DISPLAY THE SSH CREDENTIALS"
 read DUMMY
 
 #Create /quiz directory, add quiz user, display credentials
@@ -69,19 +69,19 @@ for QUESTION in $(seq 1 20); do
   read DUMMY
   clear
   echo -e "========================================================"
-  echo -e "                         ANSWER
+  echo -e "                         ANSWER"
   echo -e "========================================================"
   cat quiztemplate.json | jq ".Question$QUESTION.AnswerDescription" | fold -w 56 | tr -d '"'
   echo -e "========================================================"
-  echo -e "                         RESULTS
+  echo -e "                         RESULTS"
   echo -e "========================================================\n"
   export RESULTS1=$(find /quiz/$QUESTION -name "*-1"|wc -l)
   echo -e "Answer 1. $(perl -e "print '*' x $RESULTS1")"
-  export RESULTS2=$(find /quiz/$QUESTION -name "*-1"|wc -l)
+  export RESULTS2=$(find /quiz/$QUESTION -name "*-2"|wc -l)
   echo -e "Answer 2. $(perl -e "print '*' x $RESULTS2")"
-  export RESULTS3=$(find /quiz/$QUESTION -name "*-1"|wc -l)
+  export RESULTS3=$(find /quiz/$QUESTION -name "*-3"|wc -l)
   echo -e "Answer 3. $(perl -e "print '*' x $RESULTS3")"
-  export RESULTS4=$(find /quiz/$QUESTION -name "*-1"|wc -l)
+  export RESULTS4=$(find /quiz/$QUESTION -name "*-4"|wc -l)
   echo -e "Answer 4. $(perl -e "print '*' x $RESULTS4")"
   echo -e "\n========================================================"
   read DUMMY
