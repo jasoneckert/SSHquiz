@@ -90,3 +90,8 @@ done
 #Tally results and top 3 scorers at end
 
 #Archive results, delete /quiz directory, and remove quiz user account
+echo -e "Press Enter to archive and remove all results and the quiz$$ user account"
+read DUMMY
+tar -zcvf /root/quiz-$(date +%F).tar.gz /quiz
+rm -Rf /quiz
+userdel -r quiz$$
