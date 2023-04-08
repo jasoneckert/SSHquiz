@@ -3,7 +3,7 @@
 echo -e "Welcome Quiz Participant!\n\nEnter your handle (up to 7 letters, no spaces or special characters)--> \c"
 read ANSWER
 export HANDLE=$(echo $ANSWER | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')$$
-touch /quiz/$HANDLE
+touch /quiz/participants/$HANDLE
 echo -e "Thankyou $HANDLE, get ready to start the quiz!\n\nYou must answer each question before you can answer the next one.\nAnswers provided after the results are shown will not be counted.\nGood Luck!\n\n"
 sleep 4
 
