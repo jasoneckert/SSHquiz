@@ -25,5 +25,5 @@ During an existing video presentation (e.g., BigBlueButton, MS Teams, Zoom), the
 
 After participants SSH into the Linux server using the temporary user credentials provided by the presenter, they choose their handle and answer quiz questions:
 
-![Participants](https://github.com/jasoneckert/SSHquiz/blob/main/docs/participantscreen.png?raw=true)
+![Participants](https://github.com/jasoneckert/SSHquiz/blob/main/docs/participants.png?raw=true)
 
