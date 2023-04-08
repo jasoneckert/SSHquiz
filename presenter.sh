@@ -59,19 +59,19 @@ for QUESTION in $(seq 1 20); do
   echo -e "========================================================"
   echo -e "                       QUESTION #$QUESTION"
   echo -e "========================================================"
-  cat quiztemplate.json | jq ".Question$QUESTION.Description" | fold -w 56 | tr -d '"'
+  cat quiztemplate.json | jq ".Question$QUESTION.Description" | fold -sw 56 | tr -d '"'
   echo -e "========================================================\n"
-  cat quiztemplate.json | jq ".Question$QUESTION.Choice1" | fold -w 56 | tr -d '"'
-  cat quiztemplate.json | jq ".Question$QUESTION.Choice2" | fold -w 56 | tr -d '"'
-  cat quiztemplate.json | jq ".Question$QUESTION.Choice3" | fold -w 56 | tr -d '"'
-  cat quiztemplate.json | jq ".Question$QUESTION.Choice4" | fold -w 56 | tr -d '"'
+  cat quiztemplate.json | jq ".Question$QUESTION.Choice1" | fold -sw 56 | tr -d '"'
+  cat quiztemplate.json | jq ".Question$QUESTION.Choice2" | fold -sw 56 | tr -d '"'
+  cat quiztemplate.json | jq ".Question$QUESTION.Choice3" | fold -sw 56 | tr -d '"'
+  cat quiztemplate.json | jq ".Question$QUESTION.Choice4" | fold -sw 56 | tr -d '"'
   echo -e "\n========================================================"
   read DUMMY
   clear
   echo -e "========================================================"
   echo -e "                         ANSWER"
   echo -e "========================================================"
-  cat quiztemplate.json | jq ".Question$QUESTION.AnswerDescription" | fold -w 56 | tr -d '"'
+  cat quiztemplate.json | jq ".Question$QUESTION.AnswerDescription" | fold -sw 56 | tr -d '"'
   echo -e "========================================================"
   echo -e "                         RESULTS"
   echo -e "========================================================\n"
