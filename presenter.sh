@@ -35,7 +35,7 @@ fi
 clear
 echo -e "What is the host name or IP address of your Linux server?--> \c"
 read SERVER
-echo -e "Adjust the size of your graphical terminal such that it is\nslightly wider than the line shown here and press Enter.
+echo -e "Increase the size of your terminal font. Next, adjust\nyour graphical terminal width such that it is slightly\nwider than the line shown here and press Enter.
 echo -e "========================================================"
 read DUMMY
 clear
