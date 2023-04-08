@@ -35,7 +35,7 @@ fi
 clear
 echo -e "What is the host name or IP address of your Linux server?--> \c"
 read SERVER
-echo -e "Increase the size of your terminal font. Next, adjust\nyour graphical terminal width such that it is slightly\nwider than the line shown here and press Enter.
+echo -e "Increase the size of your terminal font. Next, adjust\nyour graphical terminal width such that it is slightly\nwider than the line shown here and press Enter."
 echo -e "========================================================"
 read DUMMY
 clear
@@ -90,4 +90,3 @@ done
 #Tally results and top 3 scorers at end
 
 #Archive results, delete /quiz directory, and remove quiz user account
-
