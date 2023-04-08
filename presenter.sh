@@ -6,28 +6,9 @@ if [ $UID -ne 0 ]; then
 fi
 
 #Check for required programs
-if ! which chpasswd; then
-  echo -e "You must install the chpasswd command."
-  exit 255
-fi
-if ! which shuf; then
-  echo -e "You must install the shuf command."
-  exit 255
-fi
-if ! which fold; then
-  echo -e "You must install the fold command."
-  exit 255
-fi
-if ! which tr; then
-  echo -e "You must install the tr command."
-  exit 255
-fi
-if ! which jq; then
-  echo -e "You must install the jq command."
-  exit 255
-fi
-if ! which perl; then
-  echo -e "You must install the perl command."
+for PROGRAM in chpasswd shuf fold tr jq perl; do
+if ! which $PROGRAM; then
+  echo -e "You must install the $PROGRAM command."
   exit 255
 fi
 
