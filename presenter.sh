@@ -26,6 +26,10 @@ if ! which jq; then
   echo -e "You must install the jq command."
   exit 255
 fi
+if ! which perl; then
+  echo -e "You must install the perl command."
+  exit 255
+fi
 
 #Display instructions
 clear
