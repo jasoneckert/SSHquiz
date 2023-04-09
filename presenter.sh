@@ -79,7 +79,7 @@ done
 echo -e "========================================================"
 echo -e "                     TOP 5 SCORES"
 echo -e "========================================================\n"
-sort -rk 2 /quiz/scores | head -5 | tee /quiz/top5scores
+sort -nk2r,4 /quiz/scores | head -5 | tee /quiz/top5scores
 echo -e "\n========================================================"
 read DUMMY
 
