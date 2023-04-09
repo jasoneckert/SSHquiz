@@ -6,7 +6,7 @@ if [ $UID -ne 0 ]; then
 fi
 
 #Check for required programs
-for PROGRAM in chpasswd shuf fold tr jq perl; do
+for PROGRAM in chpasswd shuf fold tr jq perl sed awk; do
 if ! which $PROGRAM; then
   echo -e "You must install the $PROGRAM command."
   exit 255
@@ -74,7 +74,7 @@ done
 #Tally results and top 5 scorers at end
 cat /quiz/*results | sort > /quiz/totalresults
 for PARTICIPANT in $(ls /quiz/participants); do
-  echo -e "$PARTICIPANT: $(grep $PARTICIPANT /quiz/totalresults | wc -l) correct" >>/quiz/scores
+  echo -e "$PARTICIPANT: $(grep $PARTICIPANT /quiz/totalresults | wc -l) correct in $(grep $PARTICIPANT /quiz/totalresults | cut -d "-" -f 2 |awk '{ sum += $1 } END { print sum }') seconds" >>/quiz/scores
 done
 echo -e "========================================================"
 echo -e "                     TOP 5 SCORES"
