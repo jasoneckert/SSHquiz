@@ -6,7 +6,7 @@ if [ $UID -ne 0 ]; then
 fi
 
 #Check for required programs
-for PROGRAM in chpasswd shuf fold tr jq perl sed awk; do
+for PROGRAM in chpasswd shuf fold tr jq perl sed awk cut wc find grep; do
 if ! which $PROGRAM; then
   echo -e "You must install the $PROGRAM command."
   exit 255
